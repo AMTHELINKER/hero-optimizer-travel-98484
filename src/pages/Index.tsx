@@ -4,6 +4,7 @@ import DestinationSearch from "@/components/search/DestinationSearch";
 import TrustBadges from "@/components/hero/TrustBadges";
 import ChromaticSmoke from "@/components/hero/ChromaticSmoke";
 import LocationScroll from "@/components/sections/LocationScroll";
+import Countdown30Min from "@/components/Timer/time";
 
 const Index = () => {
   const [loaded, setLoaded] = useState(false);
@@ -26,7 +27,7 @@ const Index = () => {
               loaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
             }`}>
               <span className="inline-block px-4 py-1 rounded-full bg-white/10 backdrop-blur-sm text-white text-sm font-medium">
-                Over 1000+ Destinations Available
+                L'histoire et la culture à portée de main
               </span>
             </div>
             
@@ -37,7 +38,7 @@ const Index = () => {
               }`}
               style={{ textShadow: "0 2px 4px rgba(0,0,0,0.2)" }}
             >
-              Discover Your Perfect Getaway
+              Bienvenue au Musée des Civilisations Noires
             </h1>
             
             {/* Description */}
@@ -47,21 +48,22 @@ const Index = () => {
               }`}
               style={{ textShadow: "0 1px 2px rgba(0,0,0,0.1)" }}
             >
-              Find and book your dream destination with exclusive deals and personalized recommendations
+              Votre visite commence ici. Explorez, découvrez et connectez-vous avec l'histoire riche et vibrante des civilisations noires à travers nos expositions interactives et immersives.
             </p>
-            
+            {/* Countdown Timer */}
+            <div
+              className={`fixed top-4 left-4 bg-black/40 backdrop-blur-sm rounded-xl px-4 py-2 text-white font-semibold z-50 transform transition-all duration-700 delay-250 ${
+                loaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
+              }`}
+            >
+              <Countdown30Min />
+            </div>
+
             {/* Search Component */}
             <div className={`transform transition-all duration-700 delay-300 ${
               loaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
             }`}>
               <DestinationSearch />
-            </div>
-            
-            {/* Trust Badges */}
-            <div className={`transform transition-all duration-700 delay-400 ${
-              loaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
-            }`}>
-              <TrustBadges />
             </div>
           </div>
         </div>

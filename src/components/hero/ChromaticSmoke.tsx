@@ -15,11 +15,56 @@ const ChromaticSmoke = () => {
       const mouseRepelRadius = 100;
       const mouseRepelStrength = 2;
       
-      const flags = [
-        "🇺🇸", "🇬🇧", "🇫🇷", "🇩🇪", "🇮🇹", "🇪🇸", "🇵🇹", "🇯🇵",
-        "🇰🇷", "🇨🇳", "🇮🇳", "🇧🇷", "🇲🇽", "🇨🇦", "🇦🇺", "🇳🇿",
-        "🇿🇦", "🇸🇪", "🇳🇴", "🇫🇮", "🇩🇰", "🇳🇱", "🇧🇪", "🇨🇭"
-      ];
+        const flags = [
+    "🇸🇳", // Senegal
+    "🇳🇬", // Nigeria
+    "🇬🇭", // Ghana
+    "🇨🇮", // Côte d’Ivoire
+    "🇲🇱", // Mali
+    "🇳🇪", // Niger
+    "🇬🇳", // Guinea
+    "🇬🇲", // Gambia
+    "🇨🇲", // Cameroon
+    "🇨🇩", // DR Congo
+    "🇨🇬", // Republic of Congo
+    "🇰🇪", // Kenya
+    "🇹🇿", // Tanzania
+    "🇺🇬", // Uganda
+    "🇪🇹", // Ethiopia
+    "🇪🇬", // Egypt
+    "🇲🇦", // Morocco
+    "🇩🇿", // Algeria
+    "🇹🇳", // Tunisia
+    "🇿🇦", // South Africa
+    "🇿🇲", // Zambia
+    "🇿🇼", // Zimbabwe
+    "🇧🇫", // Burkina Faso
+    "🇧🇯", // Benin
+    "🇹🇬", // Togo
+    "🇸🇱", // Sierra Leone
+    "🇱🇷", // Liberia
+    "🇸🇩", // Sudan
+    "🇸🇸", // South Sudan
+    "🇲🇬", // Madagascar
+    "🇲🇿", // Mozambique
+    "🇦🇴", // Angola
+    "🇧🇼", // Botswana
+    "🇳🇦", // Namibia
+    "🇱🇸", // Lesotho
+    "🇸🇿", // Eswatini
+    "🇨🇻", // Cape Verde
+    "🇰🇲", // Comoros
+    "🇸🇨", // Seychelles
+    "🇩🇯", // Djibouti
+    "🇪🇷", // Eritrea
+    "🇨🇫", // Central African Republic
+    "🇹🇩", // Chad
+    "🇲🇷", // Mauritania
+    "🇸🇴", // Somalia
+    "🇬🇦", // Gabon
+    "🇬🇶", // Equatorial Guinea
+  ];
+
       
       class Particle {
         pos: p5.Vector;
