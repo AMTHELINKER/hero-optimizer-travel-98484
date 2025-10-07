@@ -1,7 +1,6 @@
 
 import { useEffect, useState } from "react";
 import DestinationSearch from "@/components/search/DestinationSearch";
-import TrustBadges from "@/components/hero/TrustBadges";
 import ChromaticSmoke from "@/components/hero/ChromaticSmoke";
 import LocationScroll from "@/components/sections/LocationScroll";
 import Countdown30Min from "@/components/Timer/time";

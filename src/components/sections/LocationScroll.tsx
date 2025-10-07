@@ -1,14 +1,29 @@
 import { useRef, useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
+import { url } from "inspector";
 
-const locations = [
+const expositions = [
+  {
+    title: "L’AFRIQUE : BERCEAU DE L’HUMANITE",
+    description: "Il est maintenant admis que l’Afrique est le berceau de l’humanité. Pour en arriver à cette évidence, il a fallu des décennies d’efforts de scientifiques d’Afrique et d’ailleurs pour exhumer du paysage lunaire de la Rift valley et des profondeurs du désert tchadien les restes fossilisés de nos lointains ancêtres. « Toumaï » et « Dinknesh », qui sont aujourd’hui reconnus comme les précurseurs du genre humain. Ils sont les témoins de la marche inexorable du genre humain vers plus d’humanité, plus de technicité et surtout plus d’inventivité.",
+    image: "",
+
+  },
+  {
+    title: "CONTRIBUTIONS DE L’AFRIQUE A LA SCIENCE ET A LA TECHNOLOGIE",
+    description: "Les Contributions de l'Afrique à la Science et à la Technologie s'inscrivent dans une longue perspective. L'expérience historique de l'Afrique a commencé avec l'histoire initiale – également appelée préhistoire – qui dure jusqu'à l'émergence de l'Égypte pharaonique. Elle est suivie par l'histoire ancienne, de l'Égypte pharaonique aux rencontres soutenues avec l'Europe et l'Asie. L'histoire moderne vient après la décolonisation, ouvrant la voie à l'histoire contemporaine. Une systématique aussi simple n'a pas besoin de la division Préhistoire/Histoire. Cette exposition se concentre sur les grandes inventions, allant de la technologie lithique à la métallurgie.",
+    image: ""
+  }
+];
+
+    const locations = [
   {
     title: "Paris, France",
     description: "The City of Light beckons with its iconic architecture and timeless romance.",
     image: "/lovable-uploads/e6764045-1a5d-4f3d-80b8-d6ba711e528d.png",
     flag: "🇫🇷",
     extendedInfo: "Experience the magic of Paris with its world-renowned cuisine, historic landmarks like the Eiffel Tower and Notre-Dame, and charming neighborhoods filled with cafés and boutiques. Perfect for romantic getaways, art enthusiasts, and food lovers.",
-    price: "From $1,299"
+    url: "https://www.example.com/paris"
   },
   {
     title: "Santorini, Greece",
@@ -16,7 +31,7 @@ const locations = [
     image: "https://images.unsplash.com/photo-1613395877344-13d4a8e0d49e?q=80&w=2073&auto=format&fit=crop",
     flag: "🇬🇷",
     extendedInfo: "Discover the stunning beauty of Santorini's caldera views, famous sunsets, and traditional Greek hospitality. Explore ancient ruins, visit local wineries, and relax on unique volcanic beaches.",
-    price: "From $1,499"
+    url: "https://www.example.com/santorini"
   },
   {
     title: "Kyoto, Japan",
@@ -24,7 +39,7 @@ const locations = [
     image: "https://images.unsplash.com/photo-1624253321171-1be53e12f5f4?q=80&w=2073&auto=format&fit=crop",
     flag: "🇯🇵",
     extendedInfo: "Immerse yourself in Japanese culture with visits to historic temples, traditional tea ceremonies, and peaceful Zen gardens. Experience the beauty of cherry blossoms in spring and vibrant autumn colors.",
-    price: "From $1,899"
+    url: "https://www.example.com/kyoto"
   },
   {
     title: "Machu Picchu, Peru",
@@ -32,7 +47,7 @@ const locations = [
     image: "https://images.unsplash.com/photo-1587595431973-160d0d94add1?q=80&w=2073&auto=format&fit=crop",
     flag: "🇵🇪",
     extendedInfo: "Journey through time to explore this UNESCO World Heritage site. Trek the famous Inca Trail, discover ancient ruins, and experience the rich cultural heritage of the Andean people.",
-    price: "From $1,699"
+    url: "https://www.example.com/machu-picchu"
   }
 ];
 
@@ -67,6 +82,26 @@ const LocationScroll = () => {
   }, []);
 
   return (
+    <div>
+      {/*Expositions Section*/}
+      <div>
+        <h2 className="text-4xl text-center font-bold text-white mb-8"> Voir nos expositions</h2>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          {expositions.map((exposition) => (
+          <div key={exposition.title} className="bg-white rounded-lg overflow-hidden shadow-md">
+            <img src={exposition.image} alt={exposition.title} className="w-full h-48 object-cover" />
+            <div className="p-4">
+              <h3 className="text-xl font-semibold">{exposition.title}</h3>
+              <p className="text-gray-600">{exposition.description}</p>
+            </div>
+            <div>
+              <Button className="m-4 w-full" size="lg">Voir plus</Button>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+
     <div className="relative min-h-screen bg-black" ref={containerRef}>
       {/* Center Line */}
       <div className="absolute left-1/2 top-0 bottom-0 w-px bg-white/20">
@@ -136,9 +171,7 @@ const LocationScroll = () => {
                         </p>
                       </div>
                       <div className="space-y-4">
-                        <p className="text-2xl font-bold text-white">
-                          {location.price}
-                        </p>
+                        
                         <Button 
                           className="w-full"
                           size="lg"
@@ -154,6 +187,7 @@ const LocationScroll = () => {
           </div>
         ))}
       </div>
+    </div>
     </div>
   );
 };
